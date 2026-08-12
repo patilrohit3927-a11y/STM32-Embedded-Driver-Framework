@@ -1,0 +1,5 @@
+mach create "stm32f103"
+
+machine LoadPlatformDescription @platforms/cpus/stm32f103.repl
+
+sysbus LoadELF @C:\Users\RAHUL\OneDrive\Desktop\drivers\STM32_Driver_Framework\stm32_driver_framework.elf
