@@ -1,18 +1,20 @@
 #include "gpio.h"
 #include "../../hal/stm32f103.h"
 
+
 /*
- * GPIOC Pin 13
+ * GPIOC Pin 13.
  *
- * On the STM32F103C8T6 Blue Pill this is commonly
- * connected to the onboard LED.
+ * Commonly connected to the onboard LED
+ * on STM32F103C8T6 Blue Pill boards.
  */
 
 #define GPIO_LED_PIN    13U
 
 
 /*
- * Initialize GPIOC Pin 13 as push-pull output.
+ * Initialize GPIOC Pin 13 as
+ * general-purpose push-pull output.
  */
 void GPIO_Init(void)
 {
@@ -21,33 +23,31 @@ void GPIO_Init(void)
      */
     RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 
+
     /*
-     * PC13 is located in CRH because
-     * pins 8-15 are configured using CRH.
+     * PC13 is configured through CRH.
      *
-     * Each pin uses 4 bits:
-     *
-     * MODE[1:0]
-     * CNF[1:0]
+     * Pins 8-15 use CRH.
      *
      * PC13 occupies bits 20-23.
      */
 
     GPIOC->CRH &= ~(0xFU << 20);
 
+
     /*
      * MODE = 01
      * Output mode, 10 MHz
      *
      * CNF = 00
-     * General purpose push-pull
-     *
-     * Configuration = 0x1
+     * General-purpose push-pull
      */
+
     GPIOC->CRH |= (0x1U << 20);
 
+
     /*
-     * Start with the pin LOW.
+     * Start with PC13 LOW.
      */
     GPIOC->BRR = GPIO_PIN_13;
 }
@@ -86,7 +86,7 @@ void GPIO_Toggle(void)
 
 
 /*
- * Read PC13 state.
+ * Read PC13.
  */
 GPIO_State GPIO_Read(void)
 {

@@ -1,25 +1,18 @@
 #include "../drivers/gpio/gpio.h"
+#include "../drivers/uart/uart.h"
 
 int main(void)
 {
-    /*
-     * Initialize GPIO driver.
-     */
     GPIO_Init();
 
-    /*
-     * Turn GPIOC Pin 13 HIGH.
-     */
     GPIO_Write(GPIO_STATE_HIGH);
 
-    /*
-     * Main loop.
-     */
+    UART_Init();
+
+    UART_SendString("Hello from STM32 UART\r\n");
+
     while (1)
     {
-        /*
-         * GPIO driver test.
-         */
     }
 
     return 0;

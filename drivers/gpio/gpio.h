@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+
 /*
  * GPIO pin modes.
  */
@@ -28,14 +29,13 @@ typedef enum
 
 
 /*
- * Initialize GPIOC Pin 13
- * as a push-pull output.
+ * Initialize GPIOC Pin 13.
  */
 void GPIO_Init(void);
 
 
 /*
- * Write a state to GPIOC Pin 13.
+ * Write state to GPIOC Pin 13.
  */
 void GPIO_Write(GPIO_State state);
 
@@ -50,5 +50,6 @@ void GPIO_Toggle(void);
  * Read GPIOC Pin 13.
  */
 GPIO_State GPIO_Read(void);
+
 
 #endif /* GPIO_H */
