@@ -1,5 +1,6 @@
 #include "uart.h"
 #include "../../hal/stm32f103.h"
+#include "../../interrupt/interrupt.h"
 
 
 #define UART_CLOCK_HZ   8000000UL
@@ -8,18 +9,63 @@
 
 
 /*
- * Data received by USART1 interrupt.
+ * UART receive data.
  */
 volatile uint8_t uart_rx_data = 0;
 
 
 /*
  * Indicates that new data has been received.
- *
- * 0 = no new data
- * 1 = new data available
  */
 volatile uint8_t uart_rx_ready = 0;
+
+
+/*
+ * ============================================================
+ * UART RX INTERRUPT HANDLER
+ * ============================================================
+ *
+ * This is the handler registered with the
+ * generic interrupt framework.
+ */
+static void UART_RX_IRQHandler(void)
+{
+    /*
+     * Check RXNE flag.
+     */
+    if (USART1->SR & USART_SR_RXNE)
+    {
+        /*
+         * Read received byte.
+         *
+         * Reading DR clears RXNE.
+         */
+        uart_rx_data = (uint8_t)USART1->DR;
+
+        /*
+         * Tell the application that
+         * new data is available.
+         */
+        uart_rx_ready = 1;
+    }
+}
+
+
+/*
+ * ============================================================
+ * USART1 ISR
+ * ============================================================
+ *
+ * This function is called directly from the
+ * Cortex-M3 interrupt vector table.
+ *
+ * It forwards the interrupt to the
+ * generic interrupt framework.
+ */
+void USART1_IRQHandler(void)
+{
+    Interrupt_Dispatch(USART1_IRQn);
+}
 
 
 /*
@@ -45,7 +91,7 @@ void UART_Init(void)
      * PA9 -> USART1_TX
      *
      * Alternate-function push-pull
-     * Output speed = 50 MHz
+     * Output speed = 50 MHz.
      */
     GPIOA->CRH &= ~(0xFU << 4);
     GPIOA->CRH |=  (0xBU << 4);
@@ -54,7 +100,7 @@ void UART_Init(void)
     /*
      * PA10 -> USART1_RX
      *
-     * Floating input
+     * Floating input.
      */
     GPIOA->CRH &= ~(0xFU << 8);
     GPIOA->CRH |=  (0x4U << 8);
@@ -82,9 +128,20 @@ void UART_Init(void)
 
 
     /*
-     * Enable USART1 interrupt in NVIC.
+     * Register UART interrupt handler
+     * with generic interrupt framework.
      */
-    NVIC_EnableIRQ(USART1_IRQn);
+    Interrupt_RegisterHandler(
+        USART1_IRQn,
+        UART_RX_IRQHandler
+    );
+
+
+    /*
+     * Enable USART1 interrupt through
+     * generic interrupt framework.
+     */
+    Interrupt_Enable(USART1_IRQn);
 }
 
 
@@ -137,55 +194,22 @@ void UART_SendString(const char *str)
  * UART RECEIVE BYTE
  * ============================================================
  *
- * This function now uses the data collected by
- * the USART1 interrupt.
- *
- * It does NOT directly poll RXNE.
+ * Reception is interrupt-driven.
  */
-
 uint8_t UART_ReceiveByte(void)
 {
     /*
-     * Wait until interrupt has received data.
+     * Wait until USART1 interrupt
+     * receives a byte.
      */
     while (!uart_rx_ready)
     {
     }
 
     /*
-     * Disable interrupts briefly while
-     * accessing the shared data.
+     * Clear ready flag.
      */
     uart_rx_ready = 0;
 
     return uart_rx_data;
-}
-
-
-/*
- * ============================================================
- * USART1 INTERRUPT SERVICE ROUTINE
- * ============================================================
- */
-
-void USART1_IRQHandler(void)
-{
-    /*
-     * Check whether receive data is available.
-     */
-    if (USART1->SR & USART_SR_RXNE)
-    {
-        /*
-         * Read received byte.
-         *
-         * Reading DR clears RXNE.
-         */
-        uart_rx_data = (uint8_t)USART1->DR;
-
-        /*
-         * Inform application that
-         * new data is available.
-         */
-        uart_rx_ready = 1;
-    }
 }
