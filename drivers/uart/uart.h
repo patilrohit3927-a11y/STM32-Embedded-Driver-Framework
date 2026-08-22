@@ -25,10 +25,16 @@ void UART_SendString(const char *str);
 /*
  * Receive one byte.
  *
- * This function waits until
- * a byte is available.
+ * Data is received through the USART1
+ * interrupt handler.
  */
 uint8_t UART_ReceiveByte(void);
+
+
+/*
+ * USART1 interrupt handler.
+ */
+void USART1_IRQHandler(void);
 
 
 #endif /* UART_H */
