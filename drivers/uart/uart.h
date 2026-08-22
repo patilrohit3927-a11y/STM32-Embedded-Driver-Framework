@@ -11,19 +11,22 @@ void UART_Init(void);
 
 
 /*
- * Send one byte.
+ * Transmit one byte.
  */
 void UART_SendByte(uint8_t data);
 
 
 /*
- * Send a string.
+ * Transmit a string.
  */
 void UART_SendString(const char *str);
 
 
 /*
  * Receive one byte.
+ *
+ * This function waits until
+ * a byte is available.
  */
 uint8_t UART_ReceiveByte(void);
 

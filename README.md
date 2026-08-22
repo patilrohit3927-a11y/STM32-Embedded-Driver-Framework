@@ -160,4 +160,4 @@ UART TX has been successfully verified in Renode.
 Test:
 
 ```c
-UART_SendByte('A');
+UART_SendByte('A');                          

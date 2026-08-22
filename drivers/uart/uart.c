@@ -3,41 +3,29 @@
 
 
 /*
- * USART1 clock.
- *
- * Initial project configuration:
- * 8 MHz.
+ * USART1 clock frequency.
  */
-
 #define UART_CLOCK_HZ       8000000UL
 
 
 /*
- * Desired baud rate.
+ * UART baud rate.
  */
-
 #define UART_BAUD_RATE      115200UL
 
 
 /*
- * USART baud-rate calculation.
- *
- * USARTDIV = FCK / (16 * Baud)
- *
- * For:
- *
- * FCK   = 8 MHz
- * Baud  = 115200
- *
- * This produces an approximate BRR value.
+ * Baud rate register value.
  */
-
 #define UART_BRR_VALUE      (UART_CLOCK_HZ / UART_BAUD_RATE)
 
 
 /*
- * Initialize USART1.
+ * ============================================================
+ * UART INITIALIZATION
+ * ============================================================
  */
+
 void UART_Init(void)
 {
     /*
@@ -53,17 +41,17 @@ void UART_Init(void)
 
 
     /*
-     * Configure PA9 as USART1 TX.
-     *
-     * PA9 is in GPIOA CRH.
+     * --------------------------------------------------------
+     * PA9 -> USART1_TX
+     * --------------------------------------------------------
      *
      * MODE = 11
-     * Output 50 MHz
+     * Output mode, 50 MHz
      *
      * CNF = 10
      * Alternate-function push-pull
      *
-     * Configuration = 0xB.
+     * Configuration = 0xB
      */
 
     GPIOA->CRH &= ~(0xFU << 4);
@@ -71,7 +59,9 @@ void UART_Init(void)
 
 
     /*
-     * Configure PA10 as USART1 RX.
+     * --------------------------------------------------------
+     * PA10 -> USART1_RX
+     * --------------------------------------------------------
      *
      * MODE = 00
      * Input
@@ -79,7 +69,7 @@ void UART_Init(void)
      * CNF = 01
      * Floating input
      *
-     * Configuration = 0x4.
+     * Configuration = 0x4
      */
 
     GPIOA->CRH &= ~(0xFU << 8);
@@ -93,11 +83,11 @@ void UART_Init(void)
 
 
     /*
-     * Enable USART.
+     * Enable USART1.
      *
      * UE = USART enable
-     * TE = transmitter enable
-     * RE = receiver enable
+     * TE = Transmitter enable
+     * RE = Receiver enable
      */
 
     USART1->CR1 =
@@ -108,12 +98,16 @@ void UART_Init(void)
 
 
 /*
- * Send one byte.
+ * ============================================================
+ * UART TRANSMIT
+ * ============================================================
  */
+
 void UART_SendByte(uint8_t data)
 {
     /*
-     * Wait until transmit data register is empty.
+     * Wait until transmit data register
+     * is empty.
      */
     while (!(USART1->SR & USART_SR_TXE))
     {
@@ -121,23 +115,33 @@ void UART_SendByte(uint8_t data)
 
 
     /*
-     * Write data to data register.
+     * Write byte to USART data register.
      */
     USART1->DR = data;
 }
 
 
 /*
- * Send a string.
+ * ============================================================
+ * UART SEND STRING
+ * ============================================================
  */
+
 void UART_SendString(const char *str)
 {
+    /*
+     * Protect against NULL pointer.
+     */
     if (str == 0)
     {
         return;
     }
 
 
+    /*
+     * Send characters until
+     * NULL terminator.
+     */
     while (*str != '\0')
     {
         UART_SendByte((uint8_t)*str);
@@ -148,17 +152,29 @@ void UART_SendString(const char *str)
 
 
 /*
- * Receive one byte.
+ * ============================================================
+ * UART RECEIVE
+ * ============================================================
  */
+
 uint8_t UART_ReceiveByte(void)
 {
     /*
-     * Wait for received data.
+     * Wait until receive data
+     * register is not empty.
+     *
+     * RXNE = 1 means data is available.
      */
     while (!(USART1->SR & USART_SR_RXNE))
     {
     }
 
 
+    /*
+     * Read received byte.
+     *
+     * Reading DR clears the RXNE
+     * condition in normal USART operation.
+     */
     return (uint8_t)USART1->DR;
 }
