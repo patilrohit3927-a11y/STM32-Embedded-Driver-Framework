@@ -1,0 +1,157 @@
+
+Discarded input sections
+
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+RAM              0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+START GROUP
+LOAD C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a
+LOAD C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a
+END GROUP
+                0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+
+.text           0x08000000      0x978
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0xd8 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+                0x08000000                vector_table
+ *(.text)
+ .text          0x080000d8      0x164 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+                0x0800012c                main
+ .text          0x0800023c       0xc4 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+                0x0800023c                GPIO_Init
+                0x0800027c                GPIO_Write
+                0x080002ac                GPIO_Toggle
+                0x080002dc                GPIO_Read
+ .text          0x08000300      0x158 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+                0x0800033c                USART1_IRQHandler
+                0x0800034a                UART_Init
+                0x080003cc                UART_SendByte
+                0x080003f8                UART_SendString
+                0x0800042a                UART_ReceiveByte
+ .text          0x08000458      0x178 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+                0x08000458                SPI_Init
+                0x080004ec                SPI_Transfer
+                0x0800057c                SPI_SendByte
+                0x08000596                SPI_ReceiveByte
+                0x080005a6                SPI_SimulateTransfer
+ .text          0x080005d0      0x130 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+                0x0800060c                Interrupt_Init
+                0x08000640                Interrupt_RegisterHandler
+                0x0800066c                Interrupt_Enable
+                0x0800068a                Interrupt_Disable
+                0x080006cc                Interrupt_Dispatch
+ .text          0x08000700       0x64 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+                0x08000700                Reset_Handler
+                0x0800075c                SysTick_Handler
+                0x0800075c                PendSV_Handler
+                0x0800075c                NMI_Handler
+                0x0800075c                UsageFault_Handler
+                0x0800075c                HardFault_Handler
+                0x0800075c                DebugMon_Handler
+                0x0800075c                Default_Handler
+                0x0800075c                MemManage_Handler
+                0x0800075c                SVC_Handler
+                0x0800075c                BusFault_Handler
+ *(.text.*)
+ *(.rodata)
+ .rodata        0x08000764      0x213 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ *(.rodata.*)
+                0x08000978                        . = ALIGN (0x4)
+ *fill*         0x08000977        0x1 
+                0x08000978                        _etext = .
+
+.glue_7         0x08000978        0x0
+ .glue_7        0x08000978        0x0 linker stubs
+
+.glue_7t        0x08000978        0x0
+ .glue_7t       0x08000978        0x0 linker stubs
+
+.vfp11_veneer   0x08000978        0x0
+ .vfp11_veneer  0x08000978        0x0 linker stubs
+
+.v4_bx          0x08000978        0x0
+ .v4_bx         0x08000978        0x0 linker stubs
+
+.iplt           0x08000978        0x0
+ .iplt          0x08000978        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+
+.rel.dyn        0x08000978        0x0
+ .rel.iplt      0x08000978        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+
+.data           0x20000000        0x0 load address 0x08000978
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data.*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+                0x08000978                        _sidata = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x08000978
+ .igot.plt      0x20000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+
+.bss            0x20000000      0x104 load address 0x08000978
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss)
+ .bss           0x20000000        0x2 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+                0x20000000                uart_rx_data
+                0x20000001                uart_rx_ready
+ *fill*         0x20000002        0x2 
+ .bss           0x20000004      0x100 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+ *(.bss.*)
+ *(COMMON)
+                0x20000104                        . = ALIGN (0x4)
+                0x20000104                        _ebss = .
+
+/DISCARD/
+ *(.comment)
+ *(.note*)
+ *(.eh_frame)
+OUTPUT(stm32_driver_framework.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x00000000       0x2d
+ .ARM.attributes
+                0x00000000       0x2d C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ .ARM.attributes
+                0x0000002d       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+ .ARM.attributes
+                0x0000005a       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+ .ARM.attributes
+                0x00000087       0x2d C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+ .ARM.attributes
+                0x000000b4       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+ .ARM.attributes
+                0x000000e1       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o

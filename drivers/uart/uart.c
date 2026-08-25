@@ -3,65 +3,88 @@
 #include "../../interrupt/interrupt.h"
 
 
-#define UART_CLOCK_HZ   8000000UL
-#define UART_BAUD_RATE  115200UL
-#define UART_BRR_VALUE  (UART_CLOCK_HZ / UART_BAUD_RATE)
+/*
+ * ============================================================
+ * USART1 CONFIGURATION
+ * ============================================================
+ *
+ * STM32F103C8T6 default clock:
+ *
+ * HSI = 8 MHz
+ *
+ * USART1 is connected to APB2.
+ *
+ * Default APB2 clock = 8 MHz.
+ */
+
+
+/* USART1 peripheral clock */
+#define UART_CLOCK_HZ       8000000UL
+
+/* Desired baud rate */
+#define UART_BAUD_RATE      115200UL
 
 
 /*
- * UART receive data.
+ * USART BRR calculation.
+ *
+ * For oversampling by 16:
+ *
+ * USARTDIV = fCK / (16 * baud)
+ *
+ * BRR is encoded as:
+ *
+ * mantissa << 4 | fraction
+ *
+ * The following integer calculation provides
+ * a suitable BRR value for 8 MHz / 115200.
  */
+#define UART_BRR_VALUE      0x45U
+
+
+/*
+ * ============================================================
+ * RX STATE
+ * ============================================================
+ */
+
 volatile uint8_t uart_rx_data = 0;
-
-
-/*
- * Indicates that new data has been received.
- */
 volatile uint8_t uart_rx_ready = 0;
 
 
 /*
  * ============================================================
- * UART RX INTERRUPT HANDLER
+ * UART RX HANDLER
  * ============================================================
- *
- * This is the handler registered with the
- * generic interrupt framework.
  */
+
 static void UART_RX_IRQHandler(void)
 {
+    uint32_t status;
+
+    status = USART1->SR;
+
     /*
-     * Check RXNE flag.
+     * RXNE means a byte is available.
      */
-    if (USART1->SR & USART_SR_RXNE)
+    if (status & USART_SR_RXNE)
     {
         /*
-         * Read received byte.
-         *
          * Reading DR clears RXNE.
          */
         uart_rx_data = (uint8_t)USART1->DR;
 
-        /*
-         * Tell the application that
-         * new data is available.
-         */
-        uart_rx_ready = 1;
+        uart_rx_ready = 1U;
     }
 }
 
 
 /*
  * ============================================================
- * USART1 ISR
+ * USART1 INTERRUPT HANDLER
  * ============================================================
- *
- * This function is called directly from the
- * Cortex-M3 interrupt vector table.
- *
- * It forwards the interrupt to the
- * generic interrupt framework.
  */
+
 void USART1_IRQHandler(void)
 {
     Interrupt_Dispatch(USART1_IRQn);
@@ -88,26 +111,57 @@ void UART_Init(void)
 
 
     /*
-     * PA9 -> USART1_TX
+     * --------------------------------------------------------
+     * PA9 = USART1_TX
+     * --------------------------------------------------------
      *
+     * MODE = 11
+     * Output 50 MHz
+     *
+     * CNF = 10
      * Alternate-function push-pull
-     * Output speed = 50 MHz.
+     *
+     * Configuration value = 0xB
      */
-    GPIOA->CRH &= ~(0xFU << 4);
-    GPIOA->CRH |=  (0xBU << 4);
+
+    GPIOA->CRH &= ~(0xFUL << 4);
+    GPIOA->CRH |=  (0xBUL << 4);
 
 
     /*
-     * PA10 -> USART1_RX
+     * --------------------------------------------------------
+     * PA10 = USART1_RX
+     * --------------------------------------------------------
      *
-     * Floating input.
+     * MODE = 00
+     * Input
+     *
+     * CNF = 01
+     * Floating input
+     *
+     * Configuration value = 0x4
      */
-    GPIOA->CRH &= ~(0xFU << 8);
-    GPIOA->CRH |=  (0x4U << 8);
+
+    GPIOA->CRH &= ~(0xFUL << 8);
+    GPIOA->CRH |=  (0x4UL << 8);
+
+
+    /*
+     * --------------------------------------------------------
+     * USART configuration
+     * --------------------------------------------------------
+     */
+
+    /*
+     * Disable USART before configuration.
+     */
+    USART1->CR1 = 0U;
 
 
     /*
      * Configure baud rate.
+     *
+     * 8 MHz -> 115200 baud
      */
     USART1->BRR = UART_BRR_VALUE;
 
@@ -115,10 +169,10 @@ void UART_Init(void)
     /*
      * Enable:
      *
-     * UE     = USART
-     * TE     = Transmitter
-     * RE     = Receiver
-     * RXNEIE = RX interrupt
+     * UE     = USART enable
+     * TE     = transmitter enable
+     * RE     = receiver enable
+     * RXNEIE = RX interrupt enable
      */
     USART1->CR1 =
         USART_CR1_UE |
@@ -128,8 +182,7 @@ void UART_Init(void)
 
 
     /*
-     * Register UART interrupt handler
-     * with generic interrupt framework.
+     * Register interrupt handler.
      */
     Interrupt_RegisterHandler(
         USART1_IRQn,
@@ -138,8 +191,7 @@ void UART_Init(void)
 
 
     /*
-     * Enable USART1 interrupt through
-     * generic interrupt framework.
+     * Enable USART1 interrupt in NVIC.
      */
     Interrupt_Enable(USART1_IRQn);
 }
@@ -147,7 +199,7 @@ void UART_Init(void)
 
 /*
  * ============================================================
- * UART TRANSMIT BYTE
+ * UART SEND BYTE
  * ============================================================
  */
 
@@ -161,7 +213,7 @@ void UART_SendByte(uint8_t data)
     }
 
     /*
-     * Write data to USART.
+     * Write byte to data register.
      */
     USART1->DR = data;
 }
@@ -183,7 +235,6 @@ void UART_SendString(const char *str)
     while (*str != '\0')
     {
         UART_SendByte((uint8_t)*str);
-
         str++;
     }
 }
@@ -194,22 +245,24 @@ void UART_SendString(const char *str)
  * UART RECEIVE BYTE
  * ============================================================
  *
- * Reception is interrupt-driven.
+ * Interrupt-driven reception.
  */
+
 uint8_t UART_ReceiveByte(void)
 {
     /*
-     * Wait until USART1 interrupt
-     * receives a byte.
+     * Wait for RX interrupt.
      */
     while (!uart_rx_ready)
     {
     }
 
     /*
-     * Clear ready flag.
+     * Disable/enable ordering is not required here because
+     * uart_rx_ready is volatile and only one byte is being
+     * buffered.
      */
-    uart_rx_ready = 0;
+    uart_rx_ready = 0U;
 
     return uart_rx_data;
 }

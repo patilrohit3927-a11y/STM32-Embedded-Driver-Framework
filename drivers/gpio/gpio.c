@@ -3,19 +3,32 @@
 
 
 /*
- * GPIOC Pin 13.
+ * ============================================================
+ * STM32F103C8T6 GPIO DRIVER
+ * ============================================================
  *
- * Commonly connected to the onboard LED
- * on STM32F103C8T6 Blue Pill boards.
+ * LED:
+ *
+ * Blue Pill onboard LED:
+ *     PC13
+ *
+ * The onboard LED is normally ACTIVE LOW.
+ *
+ * Therefore:
+ *
+ * GPIO_STATE_LOW  -> LED ON
+ * GPIO_STATE_HIGH -> LED OFF
  */
 
-#define GPIO_LED_PIN    13U
+
+/* Onboard LED */
+#define GPIO_LED_PIN       GPIO_PIN_13
 
 
-/*
- * Initialize GPIOC Pin 13 as
- * general-purpose push-pull output.
- */
+/* ============================================================
+ * GPIO INITIALIZATION
+ * ============================================================ */
+
 void GPIO_Init(void)
 {
     /*
@@ -23,74 +36,97 @@ void GPIO_Init(void)
      */
     RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 
-
     /*
-     * PC13 is configured through CRH.
+     * Configure PC13.
      *
-     * Pins 8-15 use CRH.
+     * PC13 is in CRH.
      *
-     * PC13 occupies bits 20-23.
-     */
-
-    GPIOC->CRH &= ~(0xFU << 20);
-
-
-    /*
+     * Pin 13:
+     *
+     * bits 20-23
+     *
      * MODE = 01
-     * Output mode, 10 MHz
+     * CNF  = 00
      *
-     * CNF = 00
-     * General-purpose push-pull
+     * Result:
+     *
+     * General purpose push-pull output
+     * 10 MHz
      */
 
-    GPIOC->CRH |= (0x1U << 20);
-
+    GPIOC->CRH &= ~(0xFUL << 20);
+    GPIOC->CRH |=  (0x1UL << 20);
 
     /*
-     * Start with PC13 LOW.
+     * Blue Pill LED is active LOW.
+     *
+     * Drive HIGH initially so LED is OFF.
      */
-    GPIOC->BRR = GPIO_PIN_13;
+    GPIOC->BSRR = GPIO_LED_PIN;
 }
 
 
-/*
- * Write HIGH or LOW to PC13.
- */
+/* ============================================================
+ * GPIO WRITE
+ * ============================================================ */
+
 void GPIO_Write(GPIO_State state)
 {
     if (state == GPIO_STATE_HIGH)
     {
-        GPIOC->BSRR = GPIO_PIN_13;
+        /*
+         * PC13 HIGH
+         *
+         * LED OFF on Blue Pill.
+         */
+        GPIOC->BSRR = GPIO_LED_PIN;
     }
     else
     {
-        GPIOC->BRR = GPIO_PIN_13;
+        /*
+         * PC13 LOW
+         *
+         * LED ON on Blue Pill.
+         */
+        GPIOC->BRR = GPIO_LED_PIN;
     }
 }
 
 
-/*
- * Toggle PC13.
- */
+/* ============================================================
+ * GPIO TOGGLE
+ * ============================================================ */
+
 void GPIO_Toggle(void)
 {
-    if (GPIOC->ODR & GPIO_PIN_13)
+    if (GPIOC->ODR & GPIO_LED_PIN)
     {
-        GPIOC->BRR = GPIO_PIN_13;
+        /*
+         * Currently HIGH.
+         *
+         * Drive LOW.
+         */
+        GPIOC->BRR = GPIO_LED_PIN;
     }
     else
     {
-        GPIOC->BSRR = GPIO_PIN_13;
+        /*
+         * Currently LOW.
+         *
+         * Drive HIGH.
+         */
+        GPIOC->BSRR = GPIO_LED_PIN;
     }
 }
 
 
-/*
- * Read PC13.
- */
+/* ============================================================
+ * GPIO READ
+ * ============================================================ */
+
 GPIO_State GPIO_Read(void)
 {
-    if (GPIOC->IDR & GPIO_PIN_13)
+    if (GPIOC->IDR & GPIO_LED_PIN)
     {
         return GPIO_STATE_HIGH;
     }

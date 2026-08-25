@@ -7,47 +7,29 @@
 
 ENTRY(Reset_Handler)
 
-/* Memory layout */
-
 MEMORY
 {
     FLASH (rx)  : ORIGIN = 0x08000000, LENGTH = 64K
     RAM   (rwx) : ORIGIN = 0x20000000, LENGTH = 20K
 }
 
-/*
- * Initial stack pointer.
- *
- * Stack grows downward from the end of RAM.
- */
+/* Initial stack pointer */
 _estack = ORIGIN(RAM) + LENGTH(RAM);
-
 
 SECTIONS
 {
     /*
-     * Interrupt vector table and program code.
-     *
-     * Stored in Flash.
+     * Code + vector table + read-only data
      */
     .text :
     {
         . = ALIGN(4);
 
-        /*
-         * Vector table must be at the beginning.
-         */
         KEEP(*(.isr_vector))
 
-        /*
-         * Program code.
-         */
         *(.text)
         *(.text.*)
 
-        /*
-         * Read-only data.
-         */
         *(.rodata)
         *(.rodata.*)
 
@@ -58,10 +40,7 @@ SECTIONS
 
 
     /*
-     * Initialized data.
-     *
-     * The initial values are stored in Flash
-     * and copied to RAM by Reset_Handler().
+     * Initialized variables
      */
     .data :
     {
@@ -75,21 +54,17 @@ SECTIONS
         . = ALIGN(4);
 
         _edata = .;
+
     } > RAM AT > FLASH
 
-
     /*
-     * Address in Flash where the initial .data
-     * values are stored.
+     * Source address of .data in Flash
      */
     _sidata = LOADADDR(.data);
 
 
     /*
-     * Uninitialized data.
-     *
-     * This section is cleared to zero by
-     * Reset_Handler().
+     * Zero-initialized variables
      */
     .bss :
     {
@@ -104,11 +79,12 @@ SECTIONS
         . = ALIGN(4);
 
         _ebss = .;
+
     } > RAM
 
 
     /*
-     * Remove unnecessary sections.
+     * Discard unnecessary sections
      */
     /DISCARD/ :
     {
