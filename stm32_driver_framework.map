@@ -1,22 +1,46 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+                              C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o (__aeabi_ldivmod)
+C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+                              C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
+C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+                              C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
 
 Discarded input sections
 
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
- .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
- .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
- .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
- .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
- .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
- .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
+ .data          0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
+ .bss           0x00000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
+ .comment       0x00000000       0x47 C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
+ .data          0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+ .text          0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.extab.text.__udivmoddi4
+                0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
 
 Memory Configuration
 
@@ -27,112 +51,147 @@ RAM              0x20000000         0x00005000         xrw
 
 Linker script and memory map
 
-LOAD C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
-LOAD C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
-LOAD C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
-LOAD C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
-LOAD C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
-LOAD C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
+LOAD C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
 START GROUP
 LOAD C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a
 LOAD C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a
 END GROUP
                 0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
 
-.text           0x08000000      0x978
+.text           0x08000000     0x3344
                 0x08000000                        . = ALIGN (0x4)
  *(.isr_vector)
- .isr_vector    0x08000000       0xd8 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+ .isr_vector    0x08000000       0xd8 C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
                 0x08000000                vector_table
  *(.text)
- .text          0x080000d8      0x164 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
-                0x0800012c                main
- .text          0x0800023c       0xc4 C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
-                0x0800023c                GPIO_Init
-                0x0800027c                GPIO_Write
-                0x080002ac                GPIO_Toggle
-                0x080002dc                GPIO_Read
- .text          0x08000300      0x158 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
-                0x0800033c                USART1_IRQHandler
-                0x0800034a                UART_Init
-                0x080003cc                UART_SendByte
-                0x080003f8                UART_SendString
-                0x0800042a                UART_ReceiveByte
- .text          0x08000458      0x178 C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
-                0x08000458                SPI_Init
-                0x080004ec                SPI_Transfer
-                0x0800057c                SPI_SendByte
-                0x08000596                SPI_ReceiveByte
-                0x080005a6                SPI_SimulateTransfer
- .text          0x080005d0      0x130 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
-                0x0800060c                Interrupt_Init
-                0x08000640                Interrupt_RegisterHandler
-                0x0800066c                Interrupt_Enable
-                0x0800068a                Interrupt_Disable
-                0x080006cc                Interrupt_Dispatch
- .text          0x08000700       0x64 C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
-                0x08000700                Reset_Handler
-                0x0800075c                SysTick_Handler
-                0x0800075c                PendSV_Handler
-                0x0800075c                NMI_Handler
-                0x0800075c                UsageFault_Handler
-                0x0800075c                HardFault_Handler
-                0x0800075c                DebugMon_Handler
-                0x0800075c                Default_Handler
-                0x0800075c                MemManage_Handler
-                0x0800075c                SVC_Handler
-                0x0800075c                BusFault_Handler
+ .text          0x080000d8      0x818 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+                0x080004e0                main
+ .text          0x080008f0       0xc4 C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
+                0x080008f0                GPIO_Init
+                0x08000930                GPIO_Write
+                0x08000960                GPIO_Toggle
+                0x08000990                GPIO_Read
+ .text          0x080009b4      0x158 C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
+                0x080009f0                USART1_IRQHandler
+                0x080009fe                UART_Init
+                0x08000a80                UART_SendByte
+                0x08000aac                UART_SendString
+                0x08000ade                UART_ReceiveByte
+ .text          0x08000b0c      0x178 C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
+                0x08000b0c                SPI_Init
+                0x08000ba0                SPI_Transfer
+                0x08000c30                SPI_SendByte
+                0x08000c4a                SPI_ReceiveByte
+                0x08000c5a                SPI_SimulateTransfer
+ .text          0x08000c84      0x474 C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
+                0x08000d8c                I2C_Init
+                0x08000e4c                I2C_Write
+                0x08000f70                I2C_Read
+ .text          0x080010f8      0x9c4 C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+                0x08001142                OLED_Init
+                0x080011dc                OLED_Clear
+                0x08001210                OLED_SetPixel
+                0x08001294                OLED_Update
+                0x08001998                OLED_WriteChar
+                0x08001a68                OLED_WriteString
+ .text          0x08001abc      0x918 C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+                0x08001b32                BMP280_ReadChipID
+                0x08001cb8                BMP280_Init
+                0x08001d7e                BMP280_ReadData
+ .text          0x080023d4      0x134 C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
+                0x08002414                Interrupt_Init
+                0x08002448                Interrupt_RegisterHandler
+                0x08002474                Interrupt_Enable
+                0x08002492                Interrupt_Disable
+                0x080024d4                Interrupt_Dispatch
+ .text          0x08002508       0xa4 C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
+                0x08002544                Reset_Handler
+                0x080025a4                SysTick_Handler
+                0x080025a4                PendSV_Handler
+                0x080025a4                NMI_Handler
+                0x080025a4                UsageFault_Handler
+                0x080025a4                HardFault_Handler
+                0x080025a4                DebugMon_Handler
+                0x080025a4                Default_Handler
+                0x080025a4                MemManage_Handler
+                0x080025a4                SVC_Handler
+                0x080025a4                BusFault_Handler
+ .text          0x080025ac       0xa0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+                0x080025ac                __aeabi_ldivmod
+ .text          0x0800264c        0x4 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+                0x0800264c                __aeabi_idiv0
+                0x0800264c                __aeabi_ldiv0
  *(.text.*)
+ .text.__udivmoddi4
+                0x08002650      0x318 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+                0x08002650                __udivmoddi4
  *(.rodata)
- .rodata        0x08000764      0x213 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+ .rodata        0x08002968      0x7ba C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
+ *fill*         0x08003122        0x2 
+ .rodata        0x08003124      0x21d C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
  *(.rodata.*)
-                0x08000978                        . = ALIGN (0x4)
- *fill*         0x08000977        0x1 
-                0x08000978                        _etext = .
+                0x08003344                        . = ALIGN (0x4)
+ *fill*         0x08003341        0x3 
+                0x08003344                        _etext = .
 
-.glue_7         0x08000978        0x0
- .glue_7        0x08000978        0x0 linker stubs
+.glue_7         0x08003344        0x0
+ .glue_7        0x08003344        0x0 linker stubs
 
-.glue_7t        0x08000978        0x0
- .glue_7t       0x08000978        0x0 linker stubs
+.glue_7t        0x08003344        0x0
+ .glue_7t       0x08003344        0x0 linker stubs
 
-.vfp11_veneer   0x08000978        0x0
- .vfp11_veneer  0x08000978        0x0 linker stubs
+.vfp11_veneer   0x08003344        0x0
+ .vfp11_veneer  0x08003344        0x0 linker stubs
 
-.v4_bx          0x08000978        0x0
- .v4_bx         0x08000978        0x0 linker stubs
+.v4_bx          0x08003344        0x0
+ .v4_bx         0x08003344        0x0 linker stubs
 
-.iplt           0x08000978        0x0
- .iplt          0x08000978        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+.iplt           0x08003344        0x0
+ .iplt          0x08003344        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
 
-.rel.dyn        0x08000978        0x0
- .rel.iplt      0x08000978        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+.rel.dyn        0x08003344        0x0
+ .rel.iplt      0x08003344        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
 
-.data           0x20000000        0x0 load address 0x08000978
+.ARM.exidx.text.__udivmoddi4
+                0x08003344        0x8
+ .ARM.exidx.text.__udivmoddi4
+                0x08003344        0x8 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+
+.data           0x20000000        0x0 load address 0x0800334c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
  *(.data.*)
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _edata = .
-                0x08000978                        _sidata = LOADADDR (.data)
+                0x0800334c                        _sidata = LOADADDR (.data)
 
-.igot.plt       0x20000000        0x0 load address 0x08000978
- .igot.plt      0x20000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+.igot.plt       0x20000000        0x0 load address 0x0800334c
+ .igot.plt      0x20000000        0x0 C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
 
-.bss            0x20000000      0x104 load address 0x08000978
+.bss            0x20000000      0x520 load address 0x0800334c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sbss = .
  *(.bss)
- .bss           0x20000000        0x2 C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+ .bss           0x20000000        0x2 C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
                 0x20000000                uart_rx_data
                 0x20000001                uart_rx_ready
  *fill*         0x20000002        0x2 
- .bss           0x20000004      0x100 C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+ .bss           0x20000004      0x400 C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+ .bss           0x20000404       0x1c C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+ .bss           0x20000420      0x100 C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
  *(.bss.*)
  *(COMMON)
-                0x20000104                        . = ALIGN (0x4)
-                0x20000104                        _ebss = .
+                0x20000520                        . = ALIGN (0x4)
+                0x20000520                        _ebss = .
 
 /DISCARD/
  *(.comment)
@@ -144,14 +203,39 @@ LOAD linker stubs
 .ARM.attributes
                 0x00000000       0x2d
  .ARM.attributes
-                0x00000000       0x2d C:\Users\RAHUL\AppData\Local\Temp\cciFGYpn.o
+                0x00000000       0x2d C:\Users\RAHUL\AppData\Local\Temp\cciJrAfE.o
  .ARM.attributes
-                0x0000002d       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccnxsnjB.o
+                0x0000002d       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccFp66BY.o
  .ARM.attributes
-                0x0000005a       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccsHr2rP.o
+                0x0000005a       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccmINVOj.o
  .ARM.attributes
-                0x00000087       0x2d C:\Users\RAHUL\AppData\Local\Temp\cctVL268.o
+                0x00000087       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccbnQwrL.o
  .ARM.attributes
-                0x000000b4       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccarC0Xx.o
+                0x000000b4       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccsa4Kme.o
  .ARM.attributes
-                0x000000e1       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccF8v9JY.o
+                0x000000e1       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccvGqQpN.o
+ .ARM.attributes
+                0x0000010e       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccuME9In.o
+ .ARM.attributes
+                0x0000013b       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccVKXcEZ.o
+ .ARM.attributes
+                0x00000168       0x2d C:\Users\RAHUL\AppData\Local\Temp\ccSJUuaH.o
+ .ARM.attributes
+                0x00000195       0x1d C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+ .ARM.attributes
+                0x000001b2       0x2d C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x000001df       0x1d C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+
+.debug_line_str
+                0x00000000       0xef
+ .debug_line_str
+                0x00000000       0xef C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+                                 0xe3 (size before relaxing)
+ .debug_line_str
+                0x000000ef        0x0 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+                                 0xe7 (size before relaxing)
+
+.debug_frame    0x00000000       0x78
+ .debug_frame   0x00000000       0x44 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_ldivmod.o)
+ .debug_frame   0x00000044       0x34 C:/Users/RAHUL/Downloads/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)

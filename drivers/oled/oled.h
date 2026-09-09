@@ -3,10 +3,20 @@
 
 #include <stdint.h>
 
-void OLED_Init(void);
-void OLED_Clear(void);
-void OLED_WriteCommand(uint8_t command);
-void OLED_WriteData(uint8_t data);
-void OLED_PrintString(const char *text);
+#define OLED_WIDTH       128U
+#define OLED_HEIGHT       64U
+#define OLED_I2C_ADDRESS 0x3CU
 
-#endif
+void OLED_Init(void);
+
+void OLED_Clear(void);
+
+void OLED_Update(void);
+
+void OLED_SetPixel(uint8_t x, uint8_t y, uint8_t state);
+
+void OLED_WriteChar(uint8_t x, uint8_t y, char character);
+
+void OLED_WriteString(uint8_t x, uint8_t y, const char *string);
+
+#endif /* OLED_H */
