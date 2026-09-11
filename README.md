@@ -109,8 +109,6 @@ Write Driver → Compile → Renode Simulation → Generate ELF/BIN → Flash vi
 └── README.md
 ```
 
-## Author
 
 **Rohit Patil**
-Final-year Electronics & Communication Engineering, Jain College of Engineering, Belagavi
-[LinkedIn](https://www.linkedin.com/in/rohit-patil-bb56043ab) | [GitHub](https://github.com/patilrohit3927-a11y)
+Device drivers | embedded systems
